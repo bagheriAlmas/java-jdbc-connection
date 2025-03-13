@@ -11,7 +11,7 @@ public class PersonServiceImpl implements PersonService {
     private PersonServiceImpl() {
     }
 
-    public static PersonServiceImpl getPersonService() {
+    public static PersonServiceImpl getInstance() {
         return PERSON_SERVICE;
     }
 
@@ -33,13 +33,16 @@ public class PersonServiceImpl implements PersonService {
     public void addPerson(Person person) throws Exception {
         try (PersonRepository repository = new PersonRepository()) {
             repository.insert(person);
+            repository.commit();
         }
     }
 
     @Override
     public void updatePerson(Person person) throws Exception {
         try (PersonRepository repository = new PersonRepository()) {
-             repository.update(person);
+            repository.update(person);
+            repository.commit();
+
         }
     }
 
@@ -47,6 +50,8 @@ public class PersonServiceImpl implements PersonService {
     public void deletePerson(Person person) throws Exception {
         try (PersonRepository repository = new PersonRepository()) {
             repository.delete(person);
+            repository.commit();
+
         }
     }
 }
