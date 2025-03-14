@@ -19,7 +19,7 @@ public class FindAllPersonServlet extends HttpServlet {
         try {
            List<Person> personList = personService.getPersons();
            req.setAttribute("personList", personList);
-           req.getRequestDispatcher("../personList.jsp").forward(req, resp);
+           req.getRequestDispatcher("../person-list.jsp").forward(req, resp);
         } catch (Exception e) {
             throw new RuntimeException(e);
         }

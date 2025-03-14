@@ -72,12 +72,12 @@ public class PersonRepository implements AutoCloseable {
         return null;
     }
 
-    private int getIdFromSequence() throws SQLException {
-        preparedStatement = connection.prepareStatement("SELECT PERSON.NEXTVAL FROM DUAL");
+    private int getIdFromSequence() throws Exception {
+        PreparedStatement preparedStatement = connection.prepareStatement("SELECT PERSON_SEQ.NEXTVAL FROM DUAL");
         ResultSet resultSet = preparedStatement.executeQuery();
         resultSet.next();
         int id = resultSet.getInt(1);
-        resultSet.close();
+        preparedStatement.close();
         return id;
     }
 
