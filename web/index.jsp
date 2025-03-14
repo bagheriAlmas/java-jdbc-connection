@@ -11,6 +11,7 @@
     <title>$Title$</title>
   </head>
   <body>
-  $END$
+  <a href="person-save.jsp">Save</a>
+  <a href="person/findAll.do">FindAll</a>
   </body>
 </html>
