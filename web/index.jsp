@@ -9,9 +9,12 @@
 <html>
   <head>
     <title>$Title$</title>
+    <jsp:include page="WEB-INF/head.jsp"/>
   </head>
   <body>
-  <a href="person-save.jsp">Save</a>
-  <a href="person/findAll.do">FindAll</a>
+  <jsp:include page="WEB-INF/navbar.jsp"/>
+  <div class="container">
+
+  </div>
   </body>
 </html>
